@@ -68,6 +68,19 @@ public class ContactBook {
         contacts[searchIndex(name)].setEmail(email);
     }
 
+    public boolean checkRepeatedPhones() {
+        if (counter > 1) {
+            for (int i = 0; i < counter; i++) {
+                for (int j = i + 1; j < counter; j++) {
+                    if (contacts[i].getPhone() == contacts[j].getPhone()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;
@@ -86,7 +99,7 @@ public class ContactBook {
         int result = -1;
         boolean found = false;
         while (i<counter && !found)
-            if (contacts[i].getPhone().compareTo(phone))
+            if (contacts[i].equalize(phone) == 0)
                 found = true;
             else
                 i++;
@@ -102,7 +115,8 @@ public class ContactBook {
     }
 
     public String getNumberName(int number) {
-        int x = searchIndex(
+        int x = searchIndexPhone(number);
+        return contacts[searchIndexPhone(number)].getName();
     }
 
     public void initializeIterator() {

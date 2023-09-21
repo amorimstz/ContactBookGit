@@ -1,9 +1,6 @@
 import contactBook.Contact;
 import contactBook.ContactBook;
-
-import java.util.Scanner;
-
-//tete do badetaaaaaaa
+import java.util.*;
 
 public class Main {
     //Constantes que definem os comandos
@@ -29,7 +26,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String DIFFERENT_PHONE = "All contacts have different phone numbers.";
-    public static final String SHARE_PHONE = "All contacts have different phone numbers.";
+    public static final String SHARE_PHONE = "There are contacts that share phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -162,18 +159,20 @@ public class Main {
 
     private static void getNumber(Scanner in, ContactBook cBook) {
         int phone;
-
-        phone = in.nextInt(); in.nextLine();
+        phone = in.nextInt();
+        in.nextLine();
         if (!cBook.hasContactPhone(phone)) {
             System.out.println(PHONE_NOT_EXIST);
         } else {
-            System.out.println(CONTACT_EXISTS);
+            System.out.println(cBook.getNumberName(phone));
+        }
     }
 
       private static void hasSameNumber(ContactBook cBook) {
-        if (!cBook.hasContact(name)) {
+        if (!cBook.checkRepeatedPhones()) {
             System.out.println(DIFFERENT_PHONE);
+        } else {
+            System.out.println(SHARE_PHONE);
         }
-        else System.out.println(SHARE_PHONE);
     }
 }
