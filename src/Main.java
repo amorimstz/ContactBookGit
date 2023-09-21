@@ -165,8 +165,8 @@ public class Main {
         phone = in.nextInt(); in.nextLine();
         if (!cBook.hasContactPhone(phone)) {
             System.out.println(PHONE_NOT_EXIST);
-        }
-        else System.out.println(CONTACT_EXISTS);
+        } else {
+            System.out.println(CONTACT_EXISTS);
     }
 
       private static void hasSameNumber(ContactBook cBook) {
