@@ -80,6 +80,10 @@ public class ContactBook {
         contacts = tmp;
     }
 
+    public String getNumberName(int number) {
+        int x = searchIndex(
+    }
+
     public void initializeIterator() {
         currentContact = 0;
     }
