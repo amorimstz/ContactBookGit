@@ -50,7 +50,7 @@ public class ContactBook {
     }
 
     public String getPhoneName(int phone) {
-        return contacts[searchIndexPhone(phone)].getPhone();
+        return contacts[searchIndexPhone(phone)].getName();
     }
 
     //Pre: name != null && hasContact(name)
