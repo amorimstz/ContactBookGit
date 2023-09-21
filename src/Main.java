@@ -163,7 +163,7 @@ public class Main {
         int phone;
 
         phone = in.nextInt(); in.nextLine();
-        if (!cBook.hasContact(name)) {
+        if (!cBook.hasContactPhone(phone)) {
             System.out.println(PHONE_NOT_EXIST);
         }
         else System.out.println(CONTACT_EXISTS);
