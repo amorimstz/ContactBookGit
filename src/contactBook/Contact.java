@@ -37,5 +37,5 @@ public class Contact {
     }
 
     public boolean compareTo(Contact otherContact) {
-        if (this.phone - otherContact.getNumber()); 
+        if (this.phone - otherContact.getPhone()); 
     }
